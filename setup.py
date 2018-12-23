@@ -8,7 +8,11 @@ setup(
     version="0.1.0",
     description="Database backups to AWS or locally",
     long_description=readme,
-    install_requires=[],
+    install_requires=['boto3'],
     packages=find_packages('src'),
-    package_dir={'':'src'}
+    package_dir={'':'src'},
+    entry_points={
+    'console_scripts': [
+        'pgbackup=pgbackup.cli:main',
+    ]}
 )
